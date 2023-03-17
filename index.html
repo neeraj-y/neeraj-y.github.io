@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      width="device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="anchor">
+          <i class="glyphicon glyphicon-qrcode"></i>
+          <div class="title">
+            <h1>DermoSkim</h1>
+            <h4>AI Dermatologist</h4>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="jumbotron home show">
+            <h1>Say No To Skin Cancer!</h1>
+            <p class="sub">
+              Check your skin on your smartphone and get instant results in 3
+              easy steps
+            </p>
+
+            <div class="steps">
+              <div class="step1">
+                <i class="gh glyphicon glyphicon-screenshot"></i>
+                <p class="stage">1</p>
+                <p class="txt">Click skin picture</p>
+              </div>
+              <div class="connector"></div>
+              <div class="step2">
+                <i class="gh glyphicon glyphicon-circle-arrow-up"></i>
+                <p class="stage">2</p>
+                <p class="txt">Upload</p>
+              </div>
+              <div class="connector"></div>
+              <div class="step3">
+                <i class="gh glyphicon glyphicon-modal-window"></i>
+                <p class="stage">3</p>
+                <p class="txt">View results</p>
+              </div>
+            </div>
+
+            <p class="lead">
+              <button
+                class="btn btn-primary btn-lg"
+                role="button"
+                id="start-scan"
+              >
+                Click to get started
+              </button>
+            </p>
+          </div>
+
+          <div class="jumbotron scan hide">
+            <i class="glyphicon glyphicon-remove" id="close"></i>
+            <p class="title">Let's start!</p>
+            <p>You can upload photo from the device</p>
+            <p class="lead">
+              <input
+                type="file"
+                role="button"
+                id="file-input"
+                accept="image/*"
+              >
+              </input>
+              <label for="file-input" class="btn btn-primary btn-lg">
+                <i class="glyphicon glyphicon-paperclip"></i>
+                Upload photo
+              </label>
+            </p>
+
+            <p class="err hide">
+              <i class="glyphicon glyphicon-remove-circle"></i>
+              <span></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

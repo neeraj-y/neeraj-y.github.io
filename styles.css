@@ -1,0 +1,200 @@
+body {
+  margin: 0 auto;
+  font-size: 10px;
+  background: linear-gradient(to right, rgb(69, 104, 220), rgb(176, 106, 179));
+}
+
+body.scan {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.scan.jumbotron {
+  color: inherit;
+}
+
+.show {
+  display: block;
+}
+
+.hide,
+input[type="file"] {
+  display: none;
+}
+
+header {
+  background-color: #563d7c;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+header .navbar {
+  min-height: 75px;
+}
+
+.anchor {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 0 11rem;
+}
+
+.anchor .title {
+  color: wheat;
+  display: inline-block;
+}
+
+.anchor h1 {
+  font-size: 27px;
+  margin: 0;
+}
+
+.anchor h4 {
+  font-size: 12px;
+  margin: 0;
+}
+
+.anchor i.glyphicon {
+  font-size: 24px;
+  color: wheat;
+  margin-right: 7px;
+}
+
+.jumbotron {
+  color: wheat;
+  background-color: transparent;
+}
+
+.jumbotron {
+  padding: 40px 0 !important;
+}
+
+.jumbotron h1 {
+  font-size: 24px;
+}
+
+.jumbotron .gh {
+  font-size: 80px;
+}
+
+.jumbotron .sub,
+.jumbotron p {
+  font-size: 18px;
+}
+
+.jumbotron .title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.steps {
+  margin: 150px auto 120px;
+  text-align: center;
+}
+
+.steps .txt {
+  font-weight: 400;
+  margin: 10px 0 0;
+  width: 80px;
+  position: absolute;
+  line-height: 20px;
+}
+
+.steps .stage {
+  border-radius: 50%;
+  border: 1px solid wheat;
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  margin: 25px auto 0;
+  line-height: 30px;
+}
+
+.step1,
+.step2,
+.step3 {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.steps .connector {
+  width: 15%;
+  border-top: 2px solid wheat;
+  display: inline-block;
+  position: relative;
+  margin: 0 4rem;
+  top: -5px;
+}
+
+.steps .connector:after {
+  content: " \003E";
+  position: absolute;
+  right: -1px;
+  top: -9px;
+}
+
+.btn-primary {
+  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  color: whitesmoke;
+  min-width: 210px;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.lead {
+  text-align: center;
+}
+
+.home .btn-primary {
+  background-color: rgb(255, 44, 44);
+}
+
+.scan.jumbotron .lead {
+  margin: 90px 0 0;
+}
+
+.scan .btn-primary {
+  background-color: rgb(59, 197, 206);
+}
+
+.glyphicon-remove {
+  left: 85%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.glyphicon-paperclip {
+  margin-right: 5px;
+}
+
+.err.show {
+  height: 40px;
+  text-align: center;
+  color: red;
+}
+
+.err.show span {
+  display: inline-block;
+  font-size: 14px;
+  margin: 15px 0 0;
+  font-weight: 400;
+  padding: 0px 2px;
+  vertical-align: text-bottom;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .anchor {
+    padding: 2rem 0 0 3rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .anchor {
+    padding: 2rem 0 0 22rem;
+  }
+}
