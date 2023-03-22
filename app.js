@@ -34,36 +34,69 @@ function toggleImgErr(msg = "") {
   }
 }
 
+function makeAJAXPost(file) {
+  // Create a new FormData object
+  const formData = new FormData();
+  // Add the file to the form's data
+  formData.append("photos[]", file, file.name);
+
+  // valid image dimensions, create XMLObject
+  const xhr = new XMLHttpRequest();
+  const url = "http://localhost:8000/uploadImage";
+  xhr.open("POST", url);
+
+  // Set up a handler for when the request finishes
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // File(s) uploaded
+      alert("File uploaded successfully");
+    } else {
+      alert("Something went wrong uploading the file.");
+    }
+  };
+
+  // POST json data -- working
+  const payload = JSON.stringify({
+    id: 100,
+    name: "Jay",
+    city: "Kochi",
+  });
+  xhr.send(payload);
+
+  // xhr.send(formData);
+}
+
 function handleImgUpload() {
   toggleImgErr();
-  //Get reference of FileUpload.
+  // Get reference of FileUpload.
   const fileUpload = document.getElementById("file-input");
 
-  //Check whether the file is valid Image.
+  // Check whether the file is valid Image.
   const regex = new RegExp("([a-zA-Z0-9s_\\.-:])+(.jpg|.jpeg|.png|.gif)$");
   if (regex.test(fileUpload.value.toLowerCase())) {
-    //Check whether HTML5 is supported.
+    // Check whether HTML5 is supported.
     if (typeof fileUpload.files != "undefined") {
-      //Initiate the FileReader object.
-      var reader = new FileReader();
-      //Read the contents of Image File.
+      // Initiate the FileReader object.
+      const reader = new FileReader();
+      // Read the contents of Image File.
       reader.readAsDataURL(fileUpload.files[0]);
       reader.onload = function (e) {
-        //Initiate the JavaScript Image object.
-        var image = new Image();
+        // Initiate the JavaScript Image object.
+        const image = new Image();
 
-        //Set the Base64 string return from FileReader as source.
+        // Set the Base64 string return from FileReader as source.
         image.src = e.target.result;
 
-        //Validate the File Height and Width.
+        // Validate the File Height and Width.
         image.onload = function () {
-          var height = this.height;
-          var width = this.width;
-          if (height > 100 || width > 100) {
-            toggleImgErr("Height and Width must not exceed 100px.");
-            return false;
-          }
-          toggleImgErr("Uploaded image has valid Height and Width.");
+          const height = this.height;
+          const width = this.width;
+          // if (height > 45 || width > 45) {
+          //   toggleImgErr("Height and Width must not exceed 100px.");
+          //   return false;
+          // }
+          debugger;
+          makeAJAXPost(fileUpload.files[0]);
           return true;
         };
       };

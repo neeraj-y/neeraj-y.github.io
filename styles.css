@@ -1,7 +1,10 @@
 body {
   margin: 0 auto;
   font-size: 10px;
-  background: linear-gradient(to right, rgb(69, 104, 220), rgb(176, 106, 179));
+  /* background: linear-gradient(to right, rgb(69, 104, 220), rgb(176, 106, 179)); */
+
+  background: radial-gradient(rgb(69, 104, 220), rgb(176, 106, 179));
+  min-height: 100vh;
 }
 
 body.scan {
@@ -140,6 +143,7 @@ header .navbar {
   color: whitesmoke;
   min-width: 210px;
   text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .btn-primary:hover {
@@ -163,7 +167,7 @@ header .navbar {
 }
 
 .glyphicon-remove {
-  left: 85%;
+  right: -100%;
   font-size: 18px;
   cursor: pointer;
 }
